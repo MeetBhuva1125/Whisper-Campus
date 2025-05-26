@@ -1,0 +1,672 @@
+/* frontend/src/App.css */
+:root {
+    --primary-color: #4a76a8;
+    --secondary-color: #173f5f;
+    --text-color: #333;
+    --light-text: #777;
+    --background-color: #f9f9f9;
+    --card-bg: #fff;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 14px;
+  }
+  
+  .btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+  }
+  
+  .btn-success {
+    background-color: var(--success-color);
+  }
+  
+  .btn-error {
+    background-color: var(--error-color);
+  }
+  
+  .error {
+    color: var(--error-color);
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: var(--light-text);
+    font-size: 18px;
+  }
+  
+  /* App */
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main.container {
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    margin-left: 20px;
+    font-weight: 500;
+  }
+  
+  .welcome {
+    margin-left: 20px;
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+  
+  .btn-logout {
+    margin-left: 20px;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .btn-logout:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Home Page */
+  .home-page {
+    margin-bottom: 40px;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section h2 {
+    font-size: 24px;
+    color: var(--secondary-color);
+  }
+  
+  .category-filter select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+  }
+  
+  .posts-section {
+    margin-bottom: 20px;
+  }
+  
+  .no-posts {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    color: var(--light-text);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .page-btn {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .page-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+  .page-btn:hover:not(.active) {
+    background-color: #f0f0f0;
+  }
+  
+  .create-post-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Post Item */
+  .post-item {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  
+  .post-votes {
+    padding: 15px;
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+  }
+  
+  .post-content {
+    flex: 1;
+    padding: 15px;
+    position: relative;
+  }
+  
+  .post-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--light-text);
+  }
+  
+  .post-category {
+    background-color: rgba(74, 118, 168, 0.1);
+    color: var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 10px;
+  }
+  
+  .post-author {
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .post-date {
+    color: var(--light-text);
+  }
+  
+  .post-snippet {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .post-actions {
+    margin-top: 10px;
+  }
+  
+  .btn-delete {
+    background-color: transparent;
+    color: var(--error-color);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+  }
+  
+  .delete-confirm {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .delete-confirm p {
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .btn-confirm {
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 12px;
+  }
+  
+  .btn-cancel {
+    background-color: var(--light-text);
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  /* Vote Buttons */
+  .vote-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--light-text);
+    font-size: 20px;
+    padding: 2px;
+    transition: var(--transition);
+  }
+  
+  .vote-btn.active {
+    color: var(--primary-color);
+  }
+  
+  .vote-btn.upvote:hover {
+    color: var(--success-color);
+  }
+  
+  .vote-btn.downvote:hover {
+    color: var(--error-color);
+  }
+  
+  .vote-score {
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  
+  /* Post Detail */
+  .post-detail {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .post-header {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .post-header .post-votes {
+    background-color: transparent;
+    padding-right: 20px;
+  }
+  
+  .post-info {
+    flex: 1;
+  }
+  
+  .post-header .post-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .post-body {
+    padding: 20px;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .comments-section {
+    padding: 20px;
+  }
+  
+  .comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sort-options {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sort-options label {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .sort-options select {
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Comment Form */
+  .comment-form {
+    margin-bottom: 20px;
+  }
+  
+  .comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  /* Comment Item */
+  .comment-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .comment-item .comment-votes {
+    padding-right: 15px;
+  }
+  
+  .comment-content {
+    flex: 1;
+  }
+  
+  .comment-header {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  
+  .comment-author {
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .comment-date {
+    color: var(--light-text);
+  }
+  
+  .comment-text {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .comment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .btn-reply, .btn-show-replies {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+  }
+  
+  .btn-reply:hover, .btn-show-replies:hover {
+    text-decoration: underline;
+  }
+  
+  .reply-form {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 2px solid var(--border-color);
+  }
+  
+  .replies {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left: 15px;
+    border-left: 2px solid var(--border-color);
+  }
+  
+  .no-replies {
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 13px;
+  }
+  
+  /* Create Post */
+  .create-post {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 25px;
+  }
+  
+  .create-post h2 {
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .submission-note {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(23, 162, 184, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Auth Forms (Login/Register) */
+  .auth-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 25px;
+  }
+  
+  .auth-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+  
+  .auth-switch {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .anonymous-note {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(23, 162, 184, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar .container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .nav-link {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  
+    .post-item {
+      flex-direction: column;
+    }
+  
+    .post-votes {
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px;
+    }
+  
+    .vote-buttons {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .post-header {
+      flex-direction: column;
+    }
+  
+    .post-header .post-votes {
+      margin-bottom: 15px;
+      padding-right: 0;
+    }
+  
+    .comment-item {
+      flex-direction: column;
+    }
+  
+    .comment-item .comment-votes {
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+  
+    .comment-item .vote-buttons {
+      flex-direction: row;
+    }
+  
+    .filter-section {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
